@@ -4,6 +4,8 @@
 <dict>
 	<key>CFBundleDevelopmentRegion</key>
 	<string>$(DEVELOPMENT_LANGUAGE)</string>
+	<key>CFBundleDisplayName</key>
+	<string>Walk-A-Ten</string>
 	<key>CFBundleExecutable</key>
 	<string>$(EXECUTABLE_NAME)</string>
 	<key>CFBundleIdentifier</key>
@@ -18,8 +20,14 @@
 	<string>1.0</string>
 	<key>CFBundleVersion</key>
 	<string>1</string>
+	<key>LSApplicationCategoryType</key>
+	<string></string>
 	<key>LSRequiresIPhoneOS</key>
 	<true/>
+	<key>NSLocationAlwaysAndWhenInUseUsageDescription</key>
+	<string>Walk-A-Ten needs to know your location to allow location features</string>
+	<key>NSLocationWhenInUseUsageDescription</key>
+	<string>Walk-A-Ten needs to know your location to allow location features</string>
 	<key>UIApplicationSceneManifest</key>
 	<dict>
 		<key>UIApplicationSupportsMultipleScenes</key>
@@ -62,11 +70,5 @@
 		<string>UIInterfaceOrientationLandscapeLeft</string>
 		<string>UIInterfaceOrientationLandscapeRight</string>
 	</array>
-	<key>NSLocationAlwaysAndWhenInUseUsageDescription</key>
-	<string>Walk-A-Ten needs to know your location to allow location features</string>
-	<key>LSApplicationCategoryType</key>
-	<string></string>
-	<key>NSLocationWhenInUseUsageDescription</key>
-	<string>Walk-A-Ten needs to know your location to allow location features</string>
 </dict>
 </plist>
