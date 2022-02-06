@@ -7,8 +7,9 @@
 
 import UIKit
 import CoreLocation
+import MapKit
 
-class ViewController: UIViewController {
+class ViewController: UIViewController, MKMapViewDelegate {
 
     var viewController: ViewController? {
         didSet{
@@ -19,6 +20,8 @@ class ViewController: UIViewController {
             setupViewController(with: viewController)
         }
     }
+    
+    @IBOutlet weak var mapView: MKMapView!
     
     private func setupViewController(with viewController: ViewController)
     {
@@ -59,15 +62,26 @@ class ViewController: UIViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
-       
+        
+        mapView.delegate = self
+        
+       checkLocationServicesIfAllowed()
+
+    }
+    
+    func setLocationManager()
+    {
         locationMngr.delegate = self
         locationMngr.desiredAccuracy = kCLLocationAccuracyBest
         locationMngr.distanceFilter = minWalkDistanceInMetersBeforeAlert
         locationMngr.requestLocation()
-        
+      
+    }
+    
+    func setLocationService()
+    {
         locationService = UserLocationService(with: locationMngr)
         locationService?.findUserLocation{_, _ in}
-
     }
     
     override func viewDidAppear(_ animated: Bool) {
@@ -106,22 +120,71 @@ class ViewController: UIViewController {
        return startNotifyDistance
    }
     
-    func isLocationServicesAllowed() -> Bool{
+    func checkLocationServicesIfAllowed(){
         if CLLocationManager.locationServicesEnabled(){
-            switch (CLLocationManager.authorizationStatus()){
-            case .notDetermined, .restricted, .denied:
-                return false
-            case .authorizedAlways, .authorizedWhenInUse:
-                return true
-            @unknown default:
-                return false
-            }
+            setLocationManager()
+            checkLocationPermissions()
+            setLocationService()
+            
+        }else{
+            showAlert(title: "Alert", message: "Please allow Location Services in Settings")
         }
-        return false
+    }
+
+    func checkLocationPermissions(){
+        
+        switch (CLLocationManager.authorizationStatus()){
+        case .authorizedWhenInUse, .authorizedAlways:
+            mapView.showsUserLocation = true
+            centerOnUserLocation(regionInMeters: 1000)
+            locationMngr.startUpdatingLocation()
+            
+            
+        break
+        case .denied:
+            showAlert(title: "Denied", message: "Location Access denied, please check Walk-A-Ten's Location Access in Settings")
+        break
+        case .notDetermined:
+            locationMngr.requestWhenInUseAuthorization()
+
+        break
+        case .restricted:
+            showAlert(title: "Restricted", message:"Location Access restricted, please check Walk-A-Ten's Location Access in Settings")
+
+        break
+        @unknown default:
+        break
+        }
+        
     }
     
+    func centerOnUserLocation(regionInMeters: Double)
+    {
+        DispatchQueue.main.async {
+            if let location = self.locationMngr.location?.coordinate{
+           
+                let region = MKCoordinateRegion.init(center: location, latitudinalMeters: regionInMeters, longitudinalMeters: regionInMeters)
+                self.mapView.setRegion(region, animated: true)
+            }
+        }
+
+    }
     
-    func showToastMessage(message : String) {
+    func showAlert(title: String, message: String)
+    {
+        DispatchQueue.main.async {
+            let dialogAlert = UIAlertController(title: title, message: message, preferredStyle: .alert)
+            
+            let okButton = UIAlertAction(title: "Ok", style: .default, handler: nil)
+
+            dialogAlert.addAction(okButton)
+            
+            self.present(dialogAlert, animated: true, completion: nil)
+        }
+           
+    }
+    
+    func showToastMessage(message : String, duration: Double = 4) {
 
         let lblToast = UILabel(frame: CGRect(x: self.view.frame.size.width/2 - 75, y: self.view.frame.size.height-150, width: 150, height: 35))
         lblToast.backgroundColor = UIColor.black.withAlphaComponent(0.6)
@@ -133,7 +196,7 @@ class ViewController: UIViewController {
         lblToast.layer.cornerRadius = 10;
         lblToast.clipsToBounds  =  true
         self.view.addSubview(lblToast)
-        UIView.animate(withDuration: 4.0, delay: 0.1, options: .curveEaseOut, animations: {
+        UIView.animate(withDuration: duration, delay: 0.1, options: .curveEaseOut, animations: {
             lblToast.alpha = 0.0
         }, completion: {(isCompleted) in
             lblToast.removeFromSuperview()
@@ -150,13 +213,10 @@ extension ViewController: CLLocationManagerDelegate{
     }
     
     func locationManager(_ manager: CLLocationManager, didChangeAuthorization status: CLAuthorizationStatus) {
-        if status == .authorizedWhenInUse {
-            manager.startUpdatingLocation()
-        }
+        checkLocationPermissions()
     }
     
     func locationManager(_ manager: CLLocationManager, didUpdateLocations locations: [CLLocation]) {
-    
             
         if let userLocation = locations.last?.coordinate{
 
@@ -170,6 +230,7 @@ extension ViewController: CLLocationManagerDelegate{
           
             if userHasMoved10Meters {
                 showToastMessage(message: "Moved 10 meters")
+                centerOnUserLocation(regionInMeters: 100)
                 initialUserLocation = currentUserLocation
             }
             
