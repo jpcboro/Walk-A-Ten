@@ -1,8 +1,8 @@
 # Walk-A-Ten iOS app
 iOS app that detects your location, zooms in to your location on the map and shows an alert if you're moving more than 10 meters
-<p align="center">
-<img width="707" height="352" src="https://imgur.com/a/qFnkaKV" alt="Walk-A-Ten app screenshot">
-</p>
+
+<img width="286" height="838" src="https://i.imgur.com/pr9FA1X.png" alt="Walk-A-Ten app screenshot">
+
 
 **How to Run:**
 Clone the repo and then run on a simulator or a device, if using a simulator you can either use City Run, or change locations that is more than 10 meters from starting point in simulator's Features > Location
