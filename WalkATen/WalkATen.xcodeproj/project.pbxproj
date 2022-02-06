@@ -13,7 +13,30 @@
 		7991496827AD0FB600FABDB3 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 7991496627AD0FB600FABDB3 /* Main.storyboard */; };
 		7991496A27AD0FB800FABDB3 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 7991496927AD0FB800FABDB3 /* Assets.xcassets */; };
 		7991496D27AD0FB800FABDB3 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 7991496B27AD0FB800FABDB3 /* LaunchScreen.storyboard */; };
+		79DE998C27AD846F001DA24E /* UserLocationProtocol.swift in Sources */ = {isa = PBXBuildFile; fileRef = 79DE998B27AD846F001DA24E /* UserLocationProtocol.swift */; };
+		79DE999227AD84F8001DA24E /* UserLocationProviderProtocol.swift in Sources */ = {isa = PBXBuildFile; fileRef = 79DE999127AD84F8001DA24E /* UserLocationProviderProtocol.swift */; };
+		79DE999627AD85E0001DA24E /* LocationProviderProtocol.swift in Sources */ = {isa = PBXBuildFile; fileRef = 79DE999527AD85E0001DA24E /* LocationProviderProtocol.swift */; };
+		79DE999B27AD8739001DA24E /* UserLocationService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 79DE999A27AD8739001DA24E /* UserLocationService.swift */; };
+		79DE99A127AD8CD1001DA24E /* UserLocationProviderMock.swift in Sources */ = {isa = PBXBuildFile; fileRef = 79DE99A027AD8CD1001DA24E /* UserLocationProviderMock.swift */; };
+		79DE99A627AD8D30001DA24E /* UserLocationProtocol.swift in Sources */ = {isa = PBXBuildFile; fileRef = 79DE998B27AD846F001DA24E /* UserLocationProtocol.swift */; };
+		79DE99A927AD8D34001DA24E /* UserLocationProviderProtocol.swift in Sources */ = {isa = PBXBuildFile; fileRef = 79DE999127AD84F8001DA24E /* UserLocationProviderProtocol.swift */; };
+		79DE99AC27AD8D36001DA24E /* LocationProviderProtocol.swift in Sources */ = {isa = PBXBuildFile; fileRef = 79DE999527AD85E0001DA24E /* LocationProviderProtocol.swift */; };
+		79DE99B027AD8DD0001DA24E /* ViewControllerTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 79DE99AF27AD8DD0001DA24E /* ViewControllerTests.swift */; };
+		79DE99B327AD9105001DA24E /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7991496427AD0FB600FABDB3 /* ViewController.swift */; };
+		79DE99B727AD92EF001DA24E /* LocationProviderMock.swift in Sources */ = {isa = PBXBuildFile; fileRef = 79DE99B627AD92EF001DA24E /* LocationProviderMock.swift */; };
+		79DE99BB27AD938A001DA24E /* UserLocationServiceTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 79DE99BA27AD938A001DA24E /* UserLocationServiceTests.swift */; };
+		79DE99BE27AD93DA001DA24E /* UserLocationService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 79DE999A27AD8739001DA24E /* UserLocationService.swift */; };
 /* End PBXBuildFile section */
+
+/* Begin PBXContainerItemProxy section */
+		79DE992E27AD5AE1001DA24E /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 7991495527AD0FB600FABDB3 /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = 7991495C27AD0FB600FABDB3;
+			remoteInfo = WalkATen;
+		};
+/* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
 		7991495D27AD0FB600FABDB3 /* WalkATen.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = WalkATen.app; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -24,10 +47,27 @@
 		7991496927AD0FB800FABDB3 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		7991496C27AD0FB800FABDB3 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		7991496E27AD0FB800FABDB3 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		79DE992927AD5AE1001DA24E /* WalkATenTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = WalkATenTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
+		79DE992D27AD5AE1001DA24E /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		79DE998B27AD846F001DA24E /* UserLocationProtocol.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = UserLocationProtocol.swift; path = WalkATen/Protocol/UserLocationProtocol.swift; sourceTree = SOURCE_ROOT; };
+		79DE999127AD84F8001DA24E /* UserLocationProviderProtocol.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = UserLocationProviderProtocol.swift; path = WalkATen/Protocol/UserLocationProviderProtocol.swift; sourceTree = SOURCE_ROOT; };
+		79DE999527AD85E0001DA24E /* LocationProviderProtocol.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = LocationProviderProtocol.swift; path = WalkATen/Protocol/LocationProviderProtocol.swift; sourceTree = SOURCE_ROOT; };
+		79DE999A27AD8739001DA24E /* UserLocationService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserLocationService.swift; sourceTree = "<group>"; };
+		79DE99A027AD8CD1001DA24E /* UserLocationProviderMock.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserLocationProviderMock.swift; sourceTree = "<group>"; };
+		79DE99AF27AD8DD0001DA24E /* ViewControllerTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewControllerTests.swift; sourceTree = "<group>"; };
+		79DE99B627AD92EF001DA24E /* LocationProviderMock.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LocationProviderMock.swift; sourceTree = "<group>"; };
+		79DE99BA27AD938A001DA24E /* UserLocationServiceTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserLocationServiceTests.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
 		7991495A27AD0FB600FABDB3 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		79DE992627AD5AE1001DA24E /* Frameworks */ = {
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
@@ -41,6 +81,7 @@
 			isa = PBXGroup;
 			children = (
 				7991495F27AD0FB600FABDB3 /* WalkATen */,
+				79DE992A27AD5AE1001DA24E /* WalkATenTests */,
 				7991495E27AD0FB600FABDB3 /* Products */,
 			);
 			sourceTree = "<group>";
@@ -49,6 +90,7 @@
 			isa = PBXGroup;
 			children = (
 				7991495D27AD0FB600FABDB3 /* WalkATen.app */,
+				79DE992927AD5AE1001DA24E /* WalkATenTests.xctest */,
 			);
 			name = Products;
 			sourceTree = "<group>";
@@ -56,15 +98,95 @@
 		7991495F27AD0FB600FABDB3 /* WalkATen */ = {
 			isa = PBXGroup;
 			children = (
-				7991496027AD0FB600FABDB3 /* AppDelegate.swift */,
-				7991496227AD0FB600FABDB3 /* SceneDelegate.swift */,
-				7991496427AD0FB600FABDB3 /* ViewController.swift */,
-				7991496627AD0FB600FABDB3 /* Main.storyboard */,
-				7991496927AD0FB800FABDB3 /* Assets.xcassets */,
-				7991496B27AD0FB800FABDB3 /* LaunchScreen.storyboard */,
+				79DE999927AD86FF001DA24E /* Service */,
+				79DE997627AD7389001DA24E /* Protocol */,
+				79DE995527AD6584001DA24E /* Model */,
+				79DE995427AD655A001DA24E /* ViewController */,
+				79DE995327AD654F001DA24E /* View */,
+				7991497727AD139800FABDB3 /* SupportingFiles */,
 				7991496E27AD0FB800FABDB3 /* Info.plist */,
 			);
 			path = WalkATen;
+			sourceTree = "<group>";
+		};
+		7991497727AD139800FABDB3 /* SupportingFiles */ = {
+			isa = PBXGroup;
+			children = (
+				7991496227AD0FB600FABDB3 /* SceneDelegate.swift */,
+				7991496027AD0FB600FABDB3 /* AppDelegate.swift */,
+				7991496927AD0FB800FABDB3 /* Assets.xcassets */,
+				7991496B27AD0FB800FABDB3 /* LaunchScreen.storyboard */,
+			);
+			path = SupportingFiles;
+			sourceTree = "<group>";
+		};
+		79DE992A27AD5AE1001DA24E /* WalkATenTests */ = {
+			isa = PBXGroup;
+			children = (
+				79DE999F27AD8CBC001DA24E /* Tests */,
+				79DE999E27AD8CB6001DA24E /* Mocks */,
+				79DE992D27AD5AE1001DA24E /* Info.plist */,
+			);
+			path = WalkATenTests;
+			sourceTree = "<group>";
+		};
+		79DE995327AD654F001DA24E /* View */ = {
+			isa = PBXGroup;
+			children = (
+				7991496627AD0FB600FABDB3 /* Main.storyboard */,
+			);
+			path = View;
+			sourceTree = "<group>";
+		};
+		79DE995427AD655A001DA24E /* ViewController */ = {
+			isa = PBXGroup;
+			children = (
+				7991496427AD0FB600FABDB3 /* ViewController.swift */,
+			);
+			path = ViewController;
+			sourceTree = "<group>";
+		};
+		79DE995527AD6584001DA24E /* Model */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = Model;
+			sourceTree = "<group>";
+		};
+		79DE997627AD7389001DA24E /* Protocol */ = {
+			isa = PBXGroup;
+			children = (
+				79DE998B27AD846F001DA24E /* UserLocationProtocol.swift */,
+				79DE999127AD84F8001DA24E /* UserLocationProviderProtocol.swift */,
+				79DE999527AD85E0001DA24E /* LocationProviderProtocol.swift */,
+			);
+			path = Protocol;
+			sourceTree = "<group>";
+		};
+		79DE999927AD86FF001DA24E /* Service */ = {
+			isa = PBXGroup;
+			children = (
+				79DE999A27AD8739001DA24E /* UserLocationService.swift */,
+			);
+			path = Service;
+			sourceTree = "<group>";
+		};
+		79DE999E27AD8CB6001DA24E /* Mocks */ = {
+			isa = PBXGroup;
+			children = (
+				79DE99A027AD8CD1001DA24E /* UserLocationProviderMock.swift */,
+				79DE99B627AD92EF001DA24E /* LocationProviderMock.swift */,
+			);
+			path = Mocks;
+			sourceTree = "<group>";
+		};
+		79DE999F27AD8CBC001DA24E /* Tests */ = {
+			isa = PBXGroup;
+			children = (
+				79DE99AF27AD8DD0001DA24E /* ViewControllerTests.swift */,
+				79DE99BA27AD938A001DA24E /* UserLocationServiceTests.swift */,
+			);
+			path = Tests;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -87,6 +209,24 @@
 			productReference = 7991495D27AD0FB600FABDB3 /* WalkATen.app */;
 			productType = "com.apple.product-type.application";
 		};
+		79DE992827AD5AE1001DA24E /* WalkATenTests */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 79DE993027AD5AE1001DA24E /* Build configuration list for PBXNativeTarget "WalkATenTests" */;
+			buildPhases = (
+				79DE992527AD5AE1001DA24E /* Sources */,
+				79DE992627AD5AE1001DA24E /* Frameworks */,
+				79DE992727AD5AE1001DA24E /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				79DE992F27AD5AE1001DA24E /* PBXTargetDependency */,
+			);
+			name = WalkATenTests;
+			productName = WalkATenTests;
+			productReference = 79DE992927AD5AE1001DA24E /* WalkATenTests.xctest */;
+			productType = "com.apple.product-type.bundle.unit-test";
+		};
 /* End PBXNativeTarget section */
 
 /* Begin PBXProject section */
@@ -98,6 +238,10 @@
 				TargetAttributes = {
 					7991495C27AD0FB600FABDB3 = {
 						CreatedOnToolsVersion = 12.4;
+					};
+					79DE992827AD5AE1001DA24E = {
+						CreatedOnToolsVersion = 12.4;
+						TestTargetID = 7991495C27AD0FB600FABDB3;
 					};
 				};
 			};
@@ -115,6 +259,7 @@
 			projectRoot = "";
 			targets = (
 				7991495C27AD0FB600FABDB3 /* WalkATen */,
+				79DE992827AD5AE1001DA24E /* WalkATenTests */,
 			);
 		};
 /* End PBXProject section */
@@ -130,6 +275,13 @@
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
+		79DE992727AD5AE1001DA24E /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
 /* End PBXResourcesBuildPhase section */
 
 /* Begin PBXSourcesBuildPhase section */
@@ -138,12 +290,40 @@
 			buildActionMask = 2147483647;
 			files = (
 				7991496527AD0FB600FABDB3 /* ViewController.swift in Sources */,
+				79DE999B27AD8739001DA24E /* UserLocationService.swift in Sources */,
+				79DE999627AD85E0001DA24E /* LocationProviderProtocol.swift in Sources */,
+				79DE999227AD84F8001DA24E /* UserLocationProviderProtocol.swift in Sources */,
 				7991496127AD0FB600FABDB3 /* AppDelegate.swift in Sources */,
 				7991496327AD0FB600FABDB3 /* SceneDelegate.swift in Sources */,
+				79DE998C27AD846F001DA24E /* UserLocationProtocol.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		79DE992527AD5AE1001DA24E /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				79DE99B027AD8DD0001DA24E /* ViewControllerTests.swift in Sources */,
+				79DE99A627AD8D30001DA24E /* UserLocationProtocol.swift in Sources */,
+				79DE99B727AD92EF001DA24E /* LocationProviderMock.swift in Sources */,
+				79DE99AC27AD8D36001DA24E /* LocationProviderProtocol.swift in Sources */,
+				79DE99B327AD9105001DA24E /* ViewController.swift in Sources */,
+				79DE99A927AD8D34001DA24E /* UserLocationProviderProtocol.swift in Sources */,
+				79DE99BB27AD938A001DA24E /* UserLocationServiceTests.swift in Sources */,
+				79DE99BE27AD93DA001DA24E /* UserLocationService.swift in Sources */,
+				79DE99A127AD8CD1001DA24E /* UserLocationProviderMock.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXSourcesBuildPhase section */
+
+/* Begin PBXTargetDependency section */
+		79DE992F27AD5AE1001DA24E /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = 7991495C27AD0FB600FABDB3 /* WalkATen */;
+			targetProxy = 79DE992E27AD5AE1001DA24E /* PBXContainerItemProxy */;
+		};
+/* End PBXTargetDependency section */
 
 /* Begin PBXVariantGroup section */
 		7991496627AD0FB600FABDB3 /* Main.storyboard */ = {
@@ -216,7 +396,7 @@
 				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
 				GCC_WARN_UNUSED_FUNCTION = YES;
 				GCC_WARN_UNUSED_VARIABLE = YES;
-				IPHONEOS_DEPLOYMENT_TARGET = 14.4;
+				IPHONEOS_DEPLOYMENT_TARGET = 13.0;
 				MTL_ENABLE_DEBUG_INFO = INCLUDE_SOURCE;
 				MTL_FAST_MATH = YES;
 				ONLY_ACTIVE_ARCH = YES;
@@ -271,7 +451,7 @@
 				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
 				GCC_WARN_UNUSED_FUNCTION = YES;
 				GCC_WARN_UNUSED_VARIABLE = YES;
-				IPHONEOS_DEPLOYMENT_TARGET = 14.4;
+				IPHONEOS_DEPLOYMENT_TARGET = 13.0;
 				MTL_ENABLE_DEBUG_INFO = NO;
 				MTL_FAST_MATH = YES;
 				SDKROOT = iphoneos;
@@ -293,7 +473,7 @@
 					"$(inherited)",
 					"@executable_path/Frameworks",
 				);
-				PRODUCT_BUNDLE_IDENTIFIER = com.jboro.WalkATen;
+				PRODUCT_BUNDLE_IDENTIFIER = com.jboro.walkATen;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_VERSION = 5.0;
 				TARGETED_DEVICE_FAMILY = "1,2";
@@ -312,10 +492,52 @@
 					"$(inherited)",
 					"@executable_path/Frameworks",
 				);
-				PRODUCT_BUNDLE_IDENTIFIER = com.jboro.WalkATen;
+				PRODUCT_BUNDLE_IDENTIFIER = com.jboro.walkATen;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_VERSION = 5.0;
 				TARGETED_DEVICE_FAMILY = "1,2";
+			};
+			name = Release;
+		};
+		79DE993127AD5AE1001DA24E /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				BUNDLE_LOADER = "$(TEST_HOST)";
+				CODE_SIGN_STYLE = Automatic;
+				DEVELOPMENT_TEAM = 25S64T64DZ;
+				INFOPLIST_FILE = WalkATenTests/Info.plist;
+				IPHONEOS_DEPLOYMENT_TARGET = 13.0;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+					"@loader_path/Frameworks",
+				);
+				PRODUCT_BUNDLE_IDENTIFIER = com.jboro.WalkATenTests;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/WalkATen.app/WalkATen";
+			};
+			name = Debug;
+		};
+		79DE993227AD5AE1001DA24E /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				BUNDLE_LOADER = "$(TEST_HOST)";
+				CODE_SIGN_STYLE = Automatic;
+				DEVELOPMENT_TEAM = 25S64T64DZ;
+				INFOPLIST_FILE = WalkATenTests/Info.plist;
+				IPHONEOS_DEPLOYMENT_TARGET = 13.0;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+					"@loader_path/Frameworks",
+				);
+				PRODUCT_BUNDLE_IDENTIFIER = com.jboro.WalkATenTests;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/WalkATen.app/WalkATen";
 			};
 			name = Release;
 		};
@@ -336,6 +558,15 @@
 			buildConfigurations = (
 				7991497227AD0FB800FABDB3 /* Debug */,
 				7991497327AD0FB800FABDB3 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		79DE993027AD5AE1001DA24E /* Build configuration list for PBXNativeTarget "WalkATenTests" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				79DE993127AD5AE1001DA24E /* Debug */,
+				79DE993227AD5AE1001DA24E /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;
