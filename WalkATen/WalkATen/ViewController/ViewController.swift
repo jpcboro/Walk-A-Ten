@@ -186,7 +186,7 @@ class ViewController: UIViewController, MKMapViewDelegate {
     
     func showToastMessage(message : String, duration: Double = 4) {
 
-        let lblToast = UILabel(frame: CGRect(x: self.view.frame.size.width/2 - 75, y: self.view.frame.size.height-150, width: 150, height: 35))
+        let lblToast = UILabel(frame: CGRect(x: self.view.frame.size.width/2 - 170, y: self.view.frame.size.height-140, width: 330, height: 35))
         lblToast.backgroundColor = UIColor.black.withAlphaComponent(0.6)
         lblToast.textColor = UIColor.white
         lblToast.textAlignment = .center;
@@ -226,10 +226,13 @@ extension ViewController: CLLocationManagerDelegate{
                 currentUserLocation = userLocation
             }
             
-            userHasMoved10Meters = (locationService?.CheckNextLocationMoreThan10Meters(initialLocation: initialUserLocation, currentLocation: currentUserLocation)) ?? false
+            userHasMoved10Meters = (locationService?.checkNextLocationMoreThan10Meters(initialLocation: initialUserLocation, currentLocation: currentUserLocation)) ?? false
           
             if userHasMoved10Meters {
-                showToastMessage(message: "Moved 10 meters")
+
+                let moveDistance = locationService?.calculateDistance(initialLocation: initialUserLocation, currentLocation: currentUserLocation) ?? 0
+                let moveDistanceRounded = round(moveDistance * 100) / 100.0
+                showToastMessage(message: "You have moved more than \(moveDistanceRounded) meters")
                 centerOnUserLocation(regionInMeters: 100)
                 initialUserLocation = currentUserLocation
             }

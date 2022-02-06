@@ -15,5 +15,6 @@ typealias UserLocationCompletionBlock = (UserLocationProtocol?, UserLocationErro
 
 protocol UserLocationProviderProtocol {
     func findUserLocation(then: @escaping UserLocationCompletionBlock)
-    func CheckNextLocationMoreThan10Meters(initialLocation: Coordinate?, currentLocation: Coordinate?) -> Bool
+    func checkNextLocationMoreThan10Meters(initialLocation: Coordinate?, currentLocation: Coordinate?) -> Bool
+    func calculateDistance(initialLocation: Coordinate?, currentLocation: Coordinate?) -> Double
 }

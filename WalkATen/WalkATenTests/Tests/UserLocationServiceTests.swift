@@ -53,7 +53,7 @@ class UserLocationServiceTests: XCTestCase{
       
        
 
-        XCTAssertTrue( sut.CheckNextLocationMoreThan10Meters(initialLocation: initialLocation, currentLocation: currentLocation))
+        XCTAssertTrue(sut.checkNextLocationMoreThan10Meters(initialLocation: initialLocation, currentLocation: currentLocation))
         
     }
     
@@ -64,7 +64,7 @@ class UserLocationServiceTests: XCTestCase{
         let initialLocation = Coordinate(latitude: -37.810492416004465, longitude: 144.9607932391293)
         let currentLocation = Coordinate(latitude: -37.810492416004465, longitude: 144.9607932391293)
       
-        XCTAssertFalse( sut.CheckNextLocationMoreThan10Meters(initialLocation: initialLocation, currentLocation: currentLocation))
+        XCTAssertFalse(sut.checkNextLocationMoreThan10Meters(initialLocation: initialLocation, currentLocation: currentLocation))
         
     }
     
@@ -76,8 +76,20 @@ class UserLocationServiceTests: XCTestCase{
 
         let currentLocation = Coordinate(latitude: -37.810498730570345, longitude: 144.960776208709)
 
-        XCTAssertFalse( sut.CheckNextLocationMoreThan10Meters(initialLocation: initialLocation, currentLocation: currentLocation))
+        XCTAssertFalse( sut.checkNextLocationMoreThan10Meters(initialLocation: initialLocation, currentLocation: currentLocation))
         
     }
-    
+
+    func testUserChangesLocation_LocationMoreThan10Meters_ShouldReturnCorrectDistance()
+    {
+        locationProvider.isUserAuthorized = true
+
+        let initialLocation = Coordinate(latitude: -37.810492416004465, longitude: 144.9607932391293)
+        let currentLocation = Coordinate(latitude: -37.81053600866252, longitude: 144.96059425641937)
+
+        let distance = sut.calculateDistance(initialLocation: initialLocation, currentLocation: currentLocation)
+
+        XCTAssertEqual(18.177, distance, accuracy: 0.01 )
+    }
+
 }

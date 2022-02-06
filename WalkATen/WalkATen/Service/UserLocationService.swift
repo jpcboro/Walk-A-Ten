@@ -14,6 +14,7 @@ class UserLocationService: NSObject, UserLocationProviderProtocol {
     fileprivate var locationProviderProtocol: LocationProviderProtocol
     fileprivate var locationCompletionBlock: UserLocationCompletionBlock?
     var isCurrentLocationMoreThan10Meters: Bool = false
+    var locationDistance: Double = 0
     
     init(with locationProviderProtocol: LocationProviderProtocol) {
         self.locationProviderProtocol = locationProviderProtocol
@@ -30,7 +31,7 @@ class UserLocationService: NSObject, UserLocationProviderProtocol {
         }
     }
     
-    func CheckNextLocationMoreThan10Meters(initialLocation: Coordinate?, currentLocation: Coordinate?) -> Bool{
+    func checkNextLocationMoreThan10Meters(initialLocation: Coordinate?, currentLocation: Coordinate?) -> Bool{
         
         if let initialCoordinate = initialLocation,
            let currentCoordinate = currentLocation
@@ -43,7 +44,20 @@ class UserLocationService: NSObject, UserLocationProviderProtocol {
         
         
         return isCurrentLocationMoreThan10Meters
+    }
+    
+    func calculateDistance(initialLocation: Coordinate?, currentLocation: Coordinate?) -> Double{
+        
+        if let initialCoordinate = initialLocation,
+           let currentCoordinate = currentLocation
+        {
+            let initialLoc =  coord2dToLoc(coordinates: initialCoordinate)
+            let currentLoc =  coord2dToLoc(coordinates: currentCoordinate)
        
+            locationDistance =  currentLoc.distance(from: initialLoc)
+        }
+        
+        return locationDistance
     }
     
     func coord2dToLoc(coordinates coord: CLLocationCoordinate2D) -> CLLocation{

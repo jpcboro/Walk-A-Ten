@@ -24,10 +24,13 @@ struct UserLocationMock2: UserLocationProtocol{
 
 class UserLocationProviderMock: UserLocationProviderProtocol{
     
-    func CheckNextLocationMoreThan10Meters(initialLocation: Coordinate?, currentLocation: Coordinate?) -> Bool {
+    func checkNextLocationMoreThan10Meters(initialLocation: Coordinate?, currentLocation: Coordinate?) -> Bool {
         return false
     }
     
+    func calculateDistance(initialLocation: Coordinate?, currentLocation: Coordinate?) -> Double {
+        return 0
+    }
     
     var locationBlockLocationValue: UserLocationProtocol?
     var locationBlockErrorValue: UserLocationError?
