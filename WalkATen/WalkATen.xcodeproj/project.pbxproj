@@ -100,7 +100,6 @@
 			children = (
 				79DE999927AD86FF001DA24E /* Service */,
 				79DE997627AD7389001DA24E /* Protocol */,
-				79DE995527AD6584001DA24E /* Model */,
 				79DE995427AD655A001DA24E /* ViewController */,
 				79DE995327AD654F001DA24E /* View */,
 				7991497727AD139800FABDB3 /* SupportingFiles */,
@@ -144,13 +143,6 @@
 				7991496427AD0FB600FABDB3 /* ViewController.swift */,
 			);
 			path = ViewController;
-			sourceTree = "<group>";
-		};
-		79DE995527AD6584001DA24E /* Model */ = {
-			isa = PBXGroup;
-			children = (
-			);
-			path = Model;
 			sourceTree = "<group>";
 		};
 		79DE997627AD7389001DA24E /* Protocol */ = {
