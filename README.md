@@ -1,7 +1,7 @@
 # Walk-A-Ten iOS app
 iOS app that detects your location, zooms in to your location on the map and shows an alert if you're moving more than 10 meters
 
-<img width="286" height="838" src="https://i.imgur.com/pr9FA1X.png" alt="Walk-A-Ten app screenshot">
+<img width="243" height="519" src="https://i.imgur.com/h4w9H8Z.png" alt="Walk-A-Ten app screenshot">
 
 
 **How to Run:**
